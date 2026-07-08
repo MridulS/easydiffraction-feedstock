@@ -1,6 +1,6 @@
 context:
   name: easydiffraction
-  version: "0.17.0"
+  version: "0.19.1"
   python_min: "3.12"
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/easydiffraction-${{ version }}.tar.gz
-  sha256: 4a54e9aa5f1439026ed5bd4b20d1a84f0751d416b4ad8c3fe7c63ffd707b627b
+  sha256: 9ce6e6ee6eafafdf69e41dd5b4d3a135af19808f3d853c721ae9059a54629e0f
 
 build:
   number: 0
@@ -35,10 +35,11 @@ requirements:
     - sympy
     - lmfit
     - bumps
+    - emcee
     - dfo-ls
     - gemmi
-    - cryspy
-    - crysfml
+    - cryspy >=0.12.1
+    - crysfml >=0.7.0
     - diffpy.pdffit2
     - diffpy.utils
     - uncertainties
@@ -47,8 +48,8 @@ requirements:
     - darkdetect
     - pandas
     - plotly
-    - arviz
-    - py3Dmol
+    - pillow
+    - pybaselines >=1.1
 
 tests:
   - python:
@@ -58,7 +59,7 @@ tests:
       python_version: ${{ python_min }}.*
 
 about:
-  homepage: https://easydiffraction.org/
+  homepage: https://github.com/easyscience/diffraction-lib/
   summary: Making diffraction data analysis and modelling easy
   license: BSD-3-Clause
   license_file: LICENSE
